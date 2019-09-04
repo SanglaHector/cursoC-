@@ -20,7 +20,12 @@ namespace Repaso
       this.productos = listaDeProductos;
     }
 
-    public Estante(Producto[] listaDeProductos, int capacidad, int ubicacion): this (listaDeProductos)
+    // public Estante(Producto[] listaDeProductos, int capacidad, int ubicacion): this (listaDeProductos)
+    // {
+    //  this.productos = new Producto[capacidad];
+    //  this.ubicacion = ubicacion;
+    //}
+    public Estante( int capacidad, int ubicacion)
     {
       this.productos = new Producto[capacidad];
       this.ubicacion = ubicacion;
@@ -73,24 +78,42 @@ namespace Repaso
       return !(producto == estante);
     }
 
-    public static bool operator +(Producto producto, Estante estante)
+    public static bool operator +(Estante estante,Producto producto)
     {
  
       if ( producto!=estante )
       {
-        foreach(Producto prod in estante.productos)
+        for ( int i = 0; i < estante.productos.Length; i++)
         {
-          if(prod is null)
+          if(estante.productos[i] is null)
           {
-            prod = producto;
+            estante.productos[i] = producto;
+            return true;
           }
         }
       }
+      return false;
+    }
+
+    public static Estante operator -(Estante estante, Producto producto)
+    {
+      if(producto == estante)
+      {
+        for (int i = 0; i < estante.productos.Length; i++)
+        {
+          if (estante.productos[i] == producto)
+          {
+            estante.productos[i] = null;
+            return estante;
+          }
+        }
+      }
+      return estante;
+    }
+
+      #endregion
 
     }
-    #endregion
-
-  }
 }
 //p1.Equals(p2);
 //Object.ReferenceEquals(p1,p2);

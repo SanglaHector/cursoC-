@@ -57,8 +57,13 @@ namespace Repaso
 
     public static bool operator ==(Producto productoUno, Producto productoDos)
     {
-      return (productoUno.codigoDeBarra == productoDos.codigoDeBarra);
-      
+      if(!(productoUno is null) && (productoDos is null))
+      {
+        return (productoUno.codigoDeBarra == productoDos.codigoDeBarra);
+      }else 
+      {
+        return !(productoUno.codigoDeBarra == productoDos.codigoDeBarra);
+      }
     }
 
     public static bool operator !=(Producto productoUno, Producto productoDos)
