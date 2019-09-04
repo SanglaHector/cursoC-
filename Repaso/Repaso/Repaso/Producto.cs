@@ -57,12 +57,13 @@ namespace Repaso
 
     public static bool operator ==(Producto productoUno, Producto productoDos)
     {
-      if(!(productoUno is null) && (productoDos is null))
+      if(!(productoUno is null) || (productoDos is null))
       {
         return (productoUno.codigoDeBarra == productoDos.codigoDeBarra);
       }else 
       {
-        return !(productoUno.codigoDeBarra == productoDos.codigoDeBarra);
+        // return !(productoUno.codigoDeBarra == productoDos.codigoDeBarra);
+        return false;
       }
     }
 
@@ -70,10 +71,17 @@ namespace Repaso
     {
       return !(productoUno.codigoDeBarra == productoDos.codigoDeBarra);
     }
-    
+
+
     public static bool operator ==(Producto productoUno, string cadena)
     {
-      return (productoUno.codigoDeBarra == cadena);
+      if((productoUno is null ) || (cadena is null) )
+      {
+        return (productoUno.codigoDeBarra == cadena);
+      }else
+      {
+        return !(productoUno.codigoDeBarra == cadena);
+      }
     
     }
 

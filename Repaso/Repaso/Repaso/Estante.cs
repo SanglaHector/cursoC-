@@ -49,7 +49,7 @@ namespace Repaso
       estanteFinal = String.Concat(estante.ubicacion);
       foreach(Producto  i in  productos)
       {
-        estanteFinal = String.Concat(Producto.MostrarProducto(i));
+        estanteFinal = String.Concat(estanteFinal,Producto.MostrarProducto(i));
       }
       return estanteFinal;
     }
@@ -59,7 +59,7 @@ namespace Repaso
 
     public static bool operator ==(Producto producto, Estante estante)
     {
-      if (estante != null && !(producto is null))
+      if (estante != null || !(producto is null))
       {
 
         foreach (Producto prod in estante.productos)
@@ -68,7 +68,7 @@ namespace Repaso
           {
             return true;
           }
-        } 
+        }
       }
       return false;
     }
@@ -110,12 +110,7 @@ namespace Repaso
       }
       return estante;
     }
-
       #endregion
-
     }
 }
-//p1.Equals(p2);
-//Object.ReferenceEquals(p1,p2);
-//pi is null
-//p2 is null
+
