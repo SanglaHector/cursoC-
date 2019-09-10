@@ -84,5 +84,20 @@ namespace WindowsFormsApp1
       frmMostrar.personas = this.personas;
       frmMostrar.Show();
     }
+
+    private void checkTrue_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void radioButton2_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }
