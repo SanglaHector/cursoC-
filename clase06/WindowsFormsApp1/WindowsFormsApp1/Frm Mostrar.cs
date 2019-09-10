@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
   public partial class Frm_Mostrar : Form
   {
-    Persona unaPersona;
+    public Persona[] personas;
     public Frm_Mostrar()
     {
       InitializeComponent();
@@ -22,9 +22,13 @@ namespace WindowsFormsApp1
     {
 
     }
-    public void Mostrar(Persona)
-    {
 
+    private void Frm_Mostrar_Load(object sender, EventArgs e)
+    {
+     for(int i = 0; i < personas.Length; i++)
+      {
+        this.listPersonas.Items.Add(this.personas[i].Mostrar());
+      }
     }
   }
 }

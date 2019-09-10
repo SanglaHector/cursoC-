@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
   public partial class Form1 : Form
   {
-    Persona[] personas;
+    public Persona[] personas;
     public Form1()
     {
       InitializeComponent();
@@ -64,6 +64,7 @@ namespace WindowsFormsApp1
             if(personas[i] == null)
             {
               personas[i] = unaPersona;
+              break;
             }
           }
         }
@@ -75,6 +76,13 @@ namespace WindowsFormsApp1
       this.textBoxNombre.Text = "";
       this.textBoxApellido.Text = "";
       this.textBoxDNI.Text = "";
+    }
+
+    private void buttonMostrar_Click(object sender, EventArgs e)
+    {
+      Frm_Mostrar frmMostrar = new Frm_Mostrar();
+      frmMostrar.personas = this.personas;
+      frmMostrar.Show();
     }
   }
 }

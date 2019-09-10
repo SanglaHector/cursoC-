@@ -18,5 +18,10 @@ namespace WindowsFormsApp1
       this.apellido = apellido;
       this.dni = dni;
     }
+    public string Mostrar()
+    {
+      string persona = string.Concat(this.nombre, " ", this.apellido, " ", this.dni);
+      return persona;
+    }
   }
 }

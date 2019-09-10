@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+namespace WindowsFormsApp1
 {
   partial class Frm_Mostrar
   {
@@ -48,6 +48,7 @@
             this.Controls.Add(this.listPersonas);
             this.Name = "Frm_Mostrar";
             this.Text = "Frm_Mostrar";
+            this.Load += new System.EventHandler(this.Frm_Mostrar_Load);
             this.ResumeLayout(false);
 
     }

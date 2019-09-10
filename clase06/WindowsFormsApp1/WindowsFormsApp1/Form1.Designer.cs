@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
             this.textBoxDNI = new System.Windows.Forms.TextBox();
             this.bottonCancelar = new System.Windows.Forms.Button();
             this.botonAceptar = new System.Windows.Forms.Button();
+            this.buttonMostrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelNombre
@@ -92,7 +93,7 @@ namespace WindowsFormsApp1
             // 
             // bottonCancelar
             // 
-            this.bottonCancelar.Location = new System.Drawing.Point(243, 198);
+            this.bottonCancelar.Location = new System.Drawing.Point(168, 198);
             this.bottonCancelar.Name = "bottonCancelar";
             this.bottonCancelar.Size = new System.Drawing.Size(92, 33);
             this.bottonCancelar.TabIndex = 6;
@@ -101,7 +102,7 @@ namespace WindowsFormsApp1
             // 
             // botonAceptar
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(89, 198);
+            this.botonAceptar.Location = new System.Drawing.Point(42, 198);
             this.botonAceptar.Name = "botonAceptar";
             this.botonAceptar.Size = new System.Drawing.Size(92, 33);
             this.botonAceptar.TabIndex = 7;
@@ -109,11 +110,22 @@ namespace WindowsFormsApp1
             this.botonAceptar.UseVisualStyleBackColor = true;
             this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
             // 
+            // buttonMostrar
+            // 
+            this.buttonMostrar.Location = new System.Drawing.Point(298, 198);
+            this.buttonMostrar.Name = "buttonMostrar";
+            this.buttonMostrar.Size = new System.Drawing.Size(84, 33);
+            this.buttonMostrar.TabIndex = 8;
+            this.buttonMostrar.Text = "Mostrar";
+            this.buttonMostrar.UseVisualStyleBackColor = true;
+            this.buttonMostrar.Click += new System.EventHandler(this.buttonMostrar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 261);
+            this.Controls.Add(this.buttonMostrar);
             this.Controls.Add(this.botonAceptar);
             this.Controls.Add(this.bottonCancelar);
             this.Controls.Add(this.textBoxDNI);
@@ -140,6 +152,7 @@ namespace WindowsFormsApp1
     private System.Windows.Forms.TextBox textBoxDNI;
     private System.Windows.Forms.Button bottonCancelar;
     private System.Windows.Forms.Button botonAceptar;
+    private System.Windows.Forms.Button buttonMostrar;
   }
 }
 
