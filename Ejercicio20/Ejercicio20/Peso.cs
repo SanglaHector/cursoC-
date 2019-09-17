@@ -29,7 +29,6 @@ namespace Ejercicio20
       cotizRespectoDolar = cotizacion;
     }
     #endregion
-
     #region getters
     static double GetCotizacion()
     {
@@ -40,30 +39,141 @@ namespace Ejercicio20
     {
       return this.cantidad;
     }
-    #endregion
-
+        #endregion
+    #region operadores
     #region Conversores
-    static public explicit operator Dolar(Euro e)// 0.86
+        static public explicit operator Dolar(Peso p)// 0.86
     {
       double cantidad;
-      cantidad = e.GetCantidad() * 0.86;
-      Dolar d = new Dolar(cantidad, 0.86);
+      cantidad = p.GetCantidad() / 38.33;
+      Dolar d = new Dolar(cantidad, 1);
       return d;
     }
 
-    public static implicit operator Euro(double e)
+    public static implicit operator Euro(Peso p)
     {
-      Euro nuevoEuro = new Euro(e, 1);
-      return nuevoEuro;
+        Dolar d = new Dolar(1);
+        Euro e = new Euro(1);
+        d = (Dolar)p;
+        e = (Euro)d;
+        return e;
     }
 
-    static public explicit operator Peso(Euro e)// cualquier numero
+    public static implicit operator Peso(double p)
     {
-      double cantidad;
-      cantidad = e.GetCantidad() * 38.33;
-      Peso p = new Peso(cantidad, 38.33);
-      return p;
+        Peso nuevoPeso = new Peso(p, 1);
+        return nuevoPeso;
     }
-    #endregion
-  }
+        #endregion
+    #region Suma y resta
+        public static Peso operator -(Peso p, Euro e)
+        {
+            double cantidad;
+            Peso pesoConvertido = (Peso)e;
+            cantidad = p.GetCantidad() - pesoConvertido.GetCantidad();
+            Peso pesos = new Peso(cantidad);
+            return pesos;
+        }
+
+        public static Peso operator +(Peso p, Euro e)
+        {
+            double cantidad;
+            Peso pesoConvertido = (Peso)e;
+            cantidad = p.GetCantidad() + pesoConvertido.GetCantidad();
+            Peso pesos = new Peso(cantidad);
+            return pesos;
+        }
+
+        public static Peso operator -(Peso p, Dolar d)
+        {
+            double cantidad;
+            Peso pesoConvertido = (Peso)d;
+            cantidad = p.GetCantidad() - pesoConvertido.GetCantidad();
+            Peso pesos = new Peso(cantidad);
+            return pesos;
+        }
+
+        public static Peso operator +(Peso p, Dolar d)
+        {
+            double cantidad;
+            Peso pesoConvertido = (Peso)d;
+            cantidad = p.GetCantidad() + pesoConvertido.GetCantidad();
+            Peso pesos = new Peso(cantidad);
+            return pesos;
+        }
+        #endregion
+    #region Iguales y distintos
+        public static bool operator ==(Peso p, Euro e)
+        {
+            if (!p.Equals(null) && !e.Equals(null))
+            {
+                if (p ==  (Peso)e)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool operator !=(Peso p, Euro e)
+        {
+            return !(p == e);
+        }
+
+        public static bool operator ==(Peso p, Dolar d)
+        {
+            if (!p.Equals(null) && !d.Equals(null))
+            {
+                if (p == (Peso)d)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool operator !=(Peso p, Dolar d)
+        {
+            return !(p == d);
+        }
+
+        public static bool operator ==(Peso p1, Peso p2)
+        {
+            if (!p1.Equals(null) && !p2.Equals(null))
+            {
+                if (p1 == p2)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool operator !=(Peso p1, Peso p2)
+        {
+            return !(p1 == p2);
+        }
+        #endregion
+        #endregion
+    }
 }

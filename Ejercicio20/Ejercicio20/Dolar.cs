@@ -30,7 +30,6 @@ namespace Ejercicio20
       cotizRespectoDolar = cotizacion;
     }
     #endregion
-
     #region getters
     static double GetCotizacion()
     {
@@ -42,9 +41,7 @@ namespace Ejercicio20
       return this.cantidad;
     }
     #endregion
-
     #region operadores
-
     #region Conversores
     static public explicit operator Euro(Dolar d)
     {
@@ -115,41 +112,68 @@ namespace Ejercicio20
     {
       return !(d == p);
     }
-    #endregion
-    #region Suma y resta
-    public static Dolar operator -(Dolar d,Euro e)
+
+    public static bool operator == (Dolar d1, Dolar d2 )
     {
-      double cantidad;
-      cantidad = d - (Dolar)e;
-      Dolar dolares = new Dolar(cantidad, 1);
-      return dolares;
+        if (!d1.Equals(null) && !d2.Equals(null))
+        {
+            if (d1 == d2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static bool operator !=(Dolar d1, Dolar d2)
+    {
+        return !(d1 == d2);
+    }
+
+        #endregion
+    #region Suma y resta
+        public static Dolar operator -(Dolar d,Euro e)
+    {
+            double cantidad;
+            Dolar dolarConvertido = (Dolar)e;
+            cantidad = d.GetCantidad() - dolarConvertido.GetCantidad();
+            Dolar dolares = new Dolar(cantidad, 1);
+            return dolares;
     }
 
     public static Dolar operator -(Dolar d, Peso p)
     {
-      double cantidad;
-      cantidad = d - (Dolar)p;
-      Dolar dolares = new Dolar(cantidad, 1);
-      return dolares;
+            double cantidad;
+            Dolar dolarConvertido = (Dolar)p;
+            cantidad = d.GetCantidad() - dolarConvertido.GetCantidad();
+            Dolar dolares = new Dolar(cantidad, 1);
+            return dolares;
     }
 
     public static Dolar operator +(Dolar d, Euro e)
     {
-      double cantidad;
-      cantidad = d + (Dolar)e;
-      Dolar dolares = new Dolar(cantidad, 1);
-      return dolares;
-    }
+            double cantidad;
+            Dolar dolarConvertido = (Dolar)e;
+            cantidad = d.GetCantidad() + dolarConvertido.GetCantidad();
+            Dolar dolares = new Dolar(cantidad, 1);
+            return dolares;
+        }
 
     public static Dolar operator +(Dolar d, Peso p)
     {
-      double cantidad;
-      cantidad = d + (Dolar)p;
-      Dolar dolares = new Dolar(cantidad, 1);
-      return dolares;
+            double cantidad;
+            Dolar dolarConvertido = (Dolar)p;
+            cantidad = d.GetCantidad() + dolarConvertido.GetCantidad();
+            Dolar dolares = new Dolar(cantidad, 1);
+            return dolares;
     }
     #endregion
-
     #endregion
   }
 }
