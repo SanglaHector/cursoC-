@@ -13,9 +13,9 @@ namespace Ejercicio20
 
     #region Constructores
 
-    public Peso()
+    static Peso()
     {
-      this.cantidad = 0;
+      cotizRespectoDolar = 0.86;
     }
 
     public Peso(double cantidad)
@@ -42,6 +42,28 @@ namespace Ejercicio20
     }
     #endregion
 
+    #region Conversores
+    static public explicit operator Dolar(Euro e)// 0.86
+    {
+      double cantidad;
+      cantidad = e.GetCantidad() * 0.86;
+      Dolar d = new Dolar(cantidad, 0.86);
+      return d;
+    }
 
+    public static implicit operator Euro(double e)
+    {
+      Euro nuevoEuro = new Euro(e, 1);
+      return nuevoEuro;
+    }
+
+    static public explicit operator Peso(Euro e)// cualquier numero
+    {
+      double cantidad;
+      cantidad = e.GetCantidad() * 38.33;
+      Peso p = new Peso(cantidad, 38.33);
+      return p;
+    }
+    #endregion
   }
 }

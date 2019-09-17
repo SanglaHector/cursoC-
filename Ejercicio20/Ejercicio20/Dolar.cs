@@ -13,9 +13,9 @@ namespace Ejercicio20
 
     #region Constructores
 
-    public Dolar()
+     static Dolar()
     {
-      this.cantidad = 0;
+      cotizRespectoDolar = 1;
     }
 
     public Dolar(double cantidad)
@@ -26,6 +26,7 @@ namespace Ejercicio20
     public Dolar(double cantidad , double cotizacion)
     {
       this.cantidad = cantidad;
+      //this.Dolar();
       cotizRespectoDolar = cotizacion;
     }
     #endregion
