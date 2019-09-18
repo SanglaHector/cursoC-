@@ -1,0 +1,32 @@
+#region Atributos
+    private PuestoAtencion.Puesto caja;
+    private Queue<Cliente> clientes;
+    private string nombre;
+
+    public Cliente Clientes
+    {
+      get
+      {
+        return this.clientes.FirstOrDefault();
+      }
+      set
+      {
+        if(!clientes.Contains(Clientes))
+        {
+          clientes.Enqueue(Clientes);
+        }
+      }
+    }
+    #endregion
+
+    #region Constructores
+    private Negocio()
+    {
+      this.Cliente = new Queue<Cliente>(0);
+      caja = PuestoAtencion.Puesto.Caja1;
+    }
+    private Negocio(string nombre)
+    {
+      this.nombre = nombre;
+    }
+    #endregion
