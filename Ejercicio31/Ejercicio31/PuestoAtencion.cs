@@ -51,6 +51,11 @@ namespace Ejercicio31
         return false;
       }
     }
+
+    internal static void Atender(Func<Cliente> firstOrDefault)
+    {
+      throw new NotImplementedException();
+    }
     #endregion
   }
 }

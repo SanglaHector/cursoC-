@@ -9,7 +9,7 @@ namespace Ejercicio31
   public class Negocio
   {
     #region Atributos
-    private PuestoAtencion caja;
+    private PuestoAtencion.Puesto caja;
     private Queue<Cliente> clientes;
     private string nombre;
 
@@ -27,10 +27,14 @@ namespace Ejercicio31
     #endregion
 
     #region Constructores
-
+    private Negocio()
+    {
+      this.Cliente = new Queue<Cliente>(0);
+      caja = PuestoAtencion.Puesto.Caja1;
+    }
     private Negocio(string nombre)
     {
-      this.caja = PuestoAtencion.Puesto.Caja1;
+      this.nombre = nombre;
     }
     #endregion
 
@@ -56,15 +60,29 @@ namespace Ejercicio31
     {
       return !(n == c);
     }
+
     public static bool operator ~(Negocio n)
     {
       bool retorno = false;
       if(!(n.Equals(null)))
       {
-        PuestoAtencion.Atender(n.Cliente.First);
+        PuestoAtencion.Atender(n.Cliente.FirstOrDefault);
+        retorno = true;
       }
+      return retorno;
     }
+
+    public static bool operator +(Negocio n , Cliente c)
+    {
+      bool retorno = false;
+      if(!(n.Equals(null)) || !(c.Equals(null)))
+      {
+        n.Cliente.Enqueue(c);
+        retorno = true;
+      }
+      return retorno;
     }
-    #endregion
   }
+    #endregion
+  
 }
