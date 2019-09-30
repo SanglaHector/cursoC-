@@ -18,21 +18,21 @@ namespace CentralitaHerencia
         {
             get
             {
-                return this.duracion;
+                return duracion;
             }
         }
         public string NroDestino
         {
             get
             {
-                return this.nroDestino;
+                return nroDestino;
             }
         }
         public string NroOrigen
         {
             get
             {
-                return this.nroOrigen;
+                return nroOrigen;
             }
         }
         #endregion
@@ -66,7 +66,7 @@ namespace CentralitaHerencia
             }
             return retorno;
         }
-        public string Mostrar()
+        public virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Duracion      : " + Duracion);

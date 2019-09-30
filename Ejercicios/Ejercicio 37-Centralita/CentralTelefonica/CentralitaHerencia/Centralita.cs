@@ -17,44 +17,28 @@ namespace CentralitaHerencia
         {
             get
             {
-                float ganancia = 0;
-                foreach (Llamada item in listaDeLlamadas)
-                {
-                    if (item is Local)
-                    {
-                        ganancia = ganancia + ((Local)item).CostoLlamada;
-                    }
-                }
-                return ganancia;
+                return CalcularGanancia(Llamada.TipoLLamada.Local);
             }
         }
         public float GananciaPorProvincia
         {
             get
             {
-                float ganancia = 0;
-                foreach (Llamada item in listaDeLlamadas)
-                {
-                    if(item is Provincial)
-                    {
-                        ganancia = ganancia + ((Provincial)item).CostoLlamada;
-                    }
-                }
-                return ganancia;
+                return CalcularGanancia(Llamada.TipoLLamada.Provincial);
             }
         }
         public float GananciaPorTotal
         {
             get
             {
-                return (GananciaPorProvincia + GananciaPorLocal);
+                return CalcularGanancia(Llamada.TipoLLamada.Todas);
             }
         }
         public List<Llamada>Llamadas
         {
             get
             {
-                return this.listaDeLlamadas;
+                return listaDeLlamadas;   
             }
         }
         #endregion
@@ -72,16 +56,42 @@ namespace CentralitaHerencia
         #endregion
         private float CalcularGanancia(Llamada.TipoLLamada tipo)
         {
+            float ganancia = 0;
             switch(tipo)
             {
                 case Llamada.TipoLLamada.Local:
-                    return this.GananciaPorLocal;
+                    foreach (Llamada item in listaDeLlamadas)
+                    {
+                        if (item is Local)
+                        {
+                            ganancia = ganancia + ((Local)item).CostoLlamada;
+                        }
+                    }
+                    return ganancia;
                 case Llamada.TipoLLamada.Provincial:
-                    return this.GananciaPorProvincia;
-                case Llamada.TipoLLamada.Todas:
-                    return this.GananciaPorTotal;
+                    foreach (Llamada item in listaDeLlamadas)
+                    {
+                        if (item is Provincial)
+                        {
+                            ganancia = ganancia + ((Provincial)item).CostoLlamada;
+                        }
+                    }
+                    return ganancia;
                 default:
-                    return 0;
+                    foreach (Llamada ll in Llamadas)
+                    {
+                        if (ll is Local)
+                        {
+                            Local aux = (Local)ll;
+                            ganancia += aux.CostoLlamada;
+                        }
+                        else
+                        {
+                            Provincial aux = (Provincial)ll;
+                            ganancia += aux.CostoLlamada;
+                        }
+                    }
+                    return ganancia;
             }
         }
         public string Mostrar()
