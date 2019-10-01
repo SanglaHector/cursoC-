@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,20 +41,20 @@ namespace CentralitaHerencia
                 return listaDeLlamadas;   
             }
         }
-        #endregion
-        #region Metodos
-        #region Contructores
+    #endregion
+    #region Metodos
+    #region Contructores
         public Centralita()
         {
-            this.listaDeLlamadas = new List<Llamada>();
-            this.razonSocial = "";
         }
+
         public Centralita(string nombreEmpresa)
         {
-            this.razonSocial = nombreEmpresa;
+          listaDeLlamadas = new List<Llamada>();
+          razonSocial = nombreEmpresa;
         }
-        #endregion
-        private float CalcularGanancia(Llamada.TipoLLamada tipo)
+    #endregion
+    private float CalcularGanancia(Llamada.TipoLLamada tipo)
         {
             float ganancia = 0;
             switch(tipo)
