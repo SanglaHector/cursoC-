@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{BF032233-07F2-42BD-B0F1-BFFA6C3F8511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormSistemaSolar", "FormSistemaSolar\FormSistemaSolar.csproj", "{D5848186-1040-4BBD-98F3-5A868F1BCD37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF032233-07F2-42BD-B0F1-BFFA6C3F8511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF032233-07F2-42BD-B0F1-BFFA6C3F8511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF032233-07F2-42BD-B0F1-BFFA6C3F8511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF032233-07F2-42BD-B0F1-BFFA6C3F8511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5848186-1040-4BBD-98F3-5A868F1BCD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5848186-1040-4BBD-98F3-5A868F1BCD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5848186-1040-4BBD-98F3-5A868F1BCD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5848186-1040-4BBD-98F3-5A868F1BCD37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84A55A0D-F6A4-4685-AA52-E8838A23930A}
+	EndGlobalSection
+EndGlobal
