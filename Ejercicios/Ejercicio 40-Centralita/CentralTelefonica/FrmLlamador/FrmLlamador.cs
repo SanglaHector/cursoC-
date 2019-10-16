@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CentralTelefonica
+namespace FrmLlamador
 {
-  public partial class Form1 : Form
+  public partial class FrmLlamador : Form
   {
-    public Form1()
+    public FrmLlamador()
     {
       InitializeComponent();
     }

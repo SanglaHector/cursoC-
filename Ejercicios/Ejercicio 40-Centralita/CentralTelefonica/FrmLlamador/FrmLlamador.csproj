@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8221C4D9-CC9E-4DA1-941C-46AD2DFE9895}</ProjectGuid>
+    <ProjectGuid>{68FF13E6-9014-4077-80A2-DB02D1E62358}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CentralTelefonica</RootNamespace>
-    <AssemblyName>CentralTelefonica</AssemblyName>
+    <RootNamespace>FrmLlamador</RootNamespace>
+    <AssemblyName>FrmLlamador</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,16 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmMenu.cs">
+    <Compile Include="FrmLlamador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMenu.Designer.cs">
-      <DependentUpon>FrmMenu.cs</DependentUpon>
+    <Compile Include="FrmLlamador.Designer.cs">
+      <DependentUpon>FrmLlamador.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmMenu.resx">
-      <DependentUpon>FrmMenu.cs</DependentUpon>
+    <EmbeddedResource Include="FrmLlamador.resx">
+      <DependentUpon>FrmLlamador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,12 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CentralitaHerencia\CentralitaHerencia.csproj">
-      <Project>{8102b480-166c-43cb-bc7f-b8985bd25abf}</Project>
-      <Name>CentralitaHerencia</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
