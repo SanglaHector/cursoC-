@@ -244,14 +244,25 @@ namespace FrmMenu
           if(txtDestino.Text.First() == '#')
           {
               Provincial llamada = new Provincial(origen, franja, duracion, txtDestino.Text);
+          try
+          {
               this.centralita = centralita + llamada;
-              //this.centralita.Llamadas.Add(llamada);
+          }catch(CentralitaException ex)
+          {
+            MessageBox.Show(ex.Message);
+          }
         }
         else
           {
-              Local llamada = new Local(origen, duracion, txtDestino.Text, costo);
-          //this.centralita.Llamadas.Add(llamada);
-          this.centralita = centralita + llamada;
+              Local llamada = new Local("1", 1, txtDestino.Text, 1);
+          try
+          {
+            this.centralita = centralita + llamada;
+          }
+          catch (CentralitaException ex)
+          {
+            MessageBox.Show(ex.Message);
+          }
         }
         this.DialogResult = DialogResult.OK;
       }

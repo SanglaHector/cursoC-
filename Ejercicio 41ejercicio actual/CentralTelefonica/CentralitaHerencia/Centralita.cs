@@ -139,7 +139,10 @@ namespace CentralitaHerencia
             if(c != ll)
             {
                 c.AgregarLlamada(ll);
-            }
+            }else
+      {
+        throw  new CentralitaException("La llamada ya ha sido registrada", "Llamada", "+");
+      }
             return c;
         }
         #endregion
