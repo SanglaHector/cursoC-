@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{B5D6008A-98F2-4527-8205-3D1217348A0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades47", "Entidades\Entidades47.csproj", "{B5D6008A-98F2-4527-8205-3D1217348A0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramaTorneos", "ProgramaTorneos\ProgramaTorneos.csproj", "{B4C4EF6A-319F-4290-8AA8-40E4BFC21363}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B5D6008A-98F2-4527-8205-3D1217348A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5D6008A-98F2-4527-8205-3D1217348A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5D6008A-98F2-4527-8205-3D1217348A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C4EF6A-319F-4290-8AA8-40E4BFC21363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C4EF6A-319F-4290-8AA8-40E4BFC21363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C4EF6A-319F-4290-8AA8-40E4BFC21363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C4EF6A-319F-4290-8AA8-40E4BFC21363}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

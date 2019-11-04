@@ -67,8 +67,9 @@ namespace Entidades
             bool retorno = false;
             if(!e.directorTecnico.Equals(null))
             {
-
+                retorno = true;
             }
+            return retorno;
         }
         #endregion
         #region Operadores
