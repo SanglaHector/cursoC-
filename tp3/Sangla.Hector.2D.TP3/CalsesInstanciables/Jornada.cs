@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 //using ClasesInstanciables;
 using static ClasesInstanciables.Universidad;
+using Archivos;
 
 namespace ClasesInstanciables
 {
@@ -50,6 +51,31 @@ namespace ClasesInstanciables
         public Jornada()
         {
             alumnos = new List<Alumno>();
+        }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Clase de " + clase.ToString() + " Por " + instructor.ToString());
+            sb.AppendLine("Alumnos:");
+            foreach  (Alumno item in this.alumnos)
+            {
+                sb.AppendLine(item.ToString());
+            }
+            return sb.ToString();
+        }
+        public bool Guardar(Jornada jornada)
+        {
+            string path = String.Format("{0}\\Jornada.txt", Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+            Texto texto = new Texto();
+            return texto.Guardar(path, jornada.ToString());
+        }
+        public string Leer()
+        {
+            string datos;
+            Texto texto = new Texto();
+            string path = String.Format("{0}\\Jornada.txt", Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+            texto.Leer(path,out datos);
+            return datos;
         }
     }
 }

@@ -40,5 +40,37 @@ namespace ClasesInstanciables
             profesores = new List<Profesor>();
             jornadas = new List<Jornada>();
         }
+        public static Profesor operator ==(Universidad g, EClase clase)
+        {
+            foreach(Profesor item in g.profesores)
+            {
+                if(item == clase)
+                {
+                    return item;
+                }
+            }
+            //throw exception del profe
+        }
+        public static Profesor operator !=(Universidad g, EClase clase)
+        {
+            foreach (Profesor item in g.profesores)
+            {
+                if (item != clase)
+                {
+                    return item;
+                }
+            }
+            return new Profesor();
+       //     throw exception sin profe
+        }
+        public static Universidad operator +(Universidad g , EClase clase)
+        {
+            foreach (Profesor item in g.Profesores)
+            {
+                
+            }
+            Jornada jornadaNueva = new Jornada();
+        }
+
     }
 }
