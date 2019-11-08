@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ClasesAbstractas
+namespace EntidadesAbstractas
 {
     public abstract class Persona
     {

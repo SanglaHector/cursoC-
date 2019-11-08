@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ClasesAbstractas;
+using EntidadesAbstractas;
 using static ClasesInstanciables.Universidad;
 
 namespace ClasesInstanciables
 {
     sealed public class Alumno: Universitario
     {
-        private EClase claseQueToma;
+        private EClases claseQueToma;
         private EEstadoCuenta estadoCuenta;
 
         public enum EEstadoCuenta
@@ -23,11 +23,11 @@ namespace ClasesInstanciables
         {
 
         }
-        public Alumno(int id,string nombre,string apellido,string dni,ENacionalidad nacionalidad,EClase claseQueToma):base(id,nombre,apellido,dni,nacionalidad)
+        public Alumno(int id,string nombre,string apellido,string dni,ENacionalidad nacionalidad,EClases claseQueToma):base(id,nombre,apellido,dni,nacionalidad)
         {
             this.claseQueToma = claseQueToma;
         }
-        public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, EClase claseQueToma,EEstadoCuenta estadoCuenta) : this(id,nombre,apellido,dni,nacionalidad,claseQueToma)
+        public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, EClases claseQueToma,EEstadoCuenta estadoCuenta) : this(id,nombre,apellido,dni,nacionalidad,claseQueToma)
         {
             this.estadoCuenta = estadoCuenta;
         }
@@ -49,7 +49,7 @@ namespace ClasesInstanciables
         {
             return this.MostrarDatos();
         }
-        public static bool operator ==(Alumno a1, EClase e1)
+        public static bool operator ==(Alumno a1, EClases e1)
         {
             bool retorno = false;
             if(a1.claseQueToma == e1 && a1.estadoCuenta != EEstadoCuenta.Deudor)
@@ -58,7 +58,7 @@ namespace ClasesInstanciables
             }
             return retorno;
         }
-        public static bool operator !=(Alumno a1, EClase e1)
+        public static bool operator !=(Alumno a1, EClases e1)
         {
             bool retorno = false;
             if (a1.claseQueToma != e1 )

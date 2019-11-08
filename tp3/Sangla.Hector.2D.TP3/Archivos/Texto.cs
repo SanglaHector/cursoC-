@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Exepciones;
 namespace Archivos
 {
     public class Texto
@@ -17,7 +18,7 @@ namespace Archivos
             }
             catch(Exception e)
             {
-
+                throw new ArchivosException();
             }
             finally
             {
@@ -34,7 +35,7 @@ namespace Archivos
 
             }catch(Exception e)
             {
-                throw new ExecutionEngineException();
+                throw new ArchivosException();
             }
             finally
             {

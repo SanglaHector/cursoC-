@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
+using Exepciones;
 
 namespace Archivos
 {
@@ -22,7 +23,7 @@ namespace Archivos
                 retorno = true;
             }catch(Exception e)
             {
-                throw new Exception();
+                throw new ArchivosException(); 
             }
             finally
             {
@@ -42,8 +43,9 @@ namespace Archivos
             }
             catch(Exception e)
             {
-                throw new Exception();
-            }finally
+                throw new ArchivosException();
+            }
+            finally
             {
                 reader.Close();
             }

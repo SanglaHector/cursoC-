@@ -52,9 +52,13 @@
       <Project>{985584ac-02e0-49dc-9917-bb3543ba5577}</Project>
       <Name>Archivos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ClasesAbstractas\ClasesAbstractas.csproj">
+    <ProjectReference Include="..\ClasesAbstractas\EntidadesAbstractas.csproj">
       <Project>{070075a1-6938-48c7-bcb5-9c3deec8f35d}</Project>
-      <Name>ClasesAbstractas</Name>
+      <Name>EntidadesAbstractas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\exepciones\Exepciones.csproj">
+      <Project>{cac0814c-3222-448c-a2f0-35e6acb2fa55}</Project>
+      <Name>Exepciones</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

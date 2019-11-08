@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ClasesAbstractas;
+using EntidadesAbstractas;
 using static ClasesInstanciables.Universidad;
 
 namespace ClasesInstanciables
 {
     sealed public class Profesor: Universitario
     {
-        private Queue<EClase> clasesDelDia;
+        private Queue<EClases> clasesDelDia;
         private static Random random;
 
         public  Profesor() :base()
@@ -23,7 +23,7 @@ namespace ClasesInstanciables
         }
         public Profesor(int id, string nombre, string apellido, string dni,ENacionalidad nacionalidad):base(id,nombre,apellido,dni,nacionalidad)
         {
-            this.clasesDelDia = new Queue<EClase>();
+            this.clasesDelDia = new Queue<EClases>();
             this._randomClases();
         }
         protected override string MostrarDatos()
@@ -37,7 +37,7 @@ namespace ClasesInstanciables
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Clases del dia: ");
-            foreach (EClase item in clasesDelDia)
+            foreach (EClases item in clasesDelDia)
             {
                 sb.AppendLine(item.ToString());
             }
@@ -49,14 +49,14 @@ namespace ClasesInstanciables
         }
         private void _randomClases()
         {
-            clasesDelDia.Enqueue((Universidad.EClase)random.Next(5));
+            clasesDelDia.Enqueue((Universidad.EClases)random.Next(5));
             System.Threading.Thread.Sleep(1000);
-            clasesDelDia.Enqueue((Universidad.EClase)random.Next(4));
+            clasesDelDia.Enqueue((Universidad.EClases)random.Next(4));
         }
-        public static bool operator ==(Profesor p, EClase clase)
+        public static bool operator ==(Profesor p, EClases clase)
         {
             bool retorno = false;
-            foreach  (EClase item in p.clasesDelDia)
+            foreach  (EClases item in p.clasesDelDia)
             {
                 if(item == clase)
                 {
@@ -66,7 +66,7 @@ namespace ClasesInstanciables
             }
             return retorno;
         }
-        public static bool operator !=(Profesor p,EClase clase)
+        public static bool operator !=(Profesor p,EClases clase)
         {
             return !(p == clase);
         }

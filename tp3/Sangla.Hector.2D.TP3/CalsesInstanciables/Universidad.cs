@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Exepciones;
+using Archivos;
 
 namespace ClasesInstanciables
 {
@@ -11,13 +13,13 @@ namespace ClasesInstanciables
         private List<Alumno> alumnos;
         private List<Profesor> profesores;
         private List<Jornada> jornadas;
-
-        public enum EClase
+        
+        public enum EClases
         {
             Programacion,
             Laboratorio,
             Legislacion,
-            Spd
+            SPD
         }
 
         public List<Alumno> Alumnos { get; set; }
@@ -27,7 +29,7 @@ namespace ClasesInstanciables
         {
             get
             {
-                return this[i];
+                return jornadas[i];
             }
             set
             {
@@ -40,37 +42,97 @@ namespace ClasesInstanciables
             profesores = new List<Profesor>();
             jornadas = new List<Jornada>();
         }
-        public static Profesor operator ==(Universidad g, EClase clase)
+        public Universidad Leer()
         {
-            foreach(Profesor item in g.profesores)
+            Xml<Universidad> xml = new Xml<Universidad>();
+            Universidad g = new Universidad();
+            string path = String.Format("{0}\\Universidad.xml", Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+            xml.Leer(path, out g);
+            return g;
+        }
+        public static bool Guardar(Universidad uni)
+        {
+            Xml<Universidad> xml = new Xml<Universidad>();
+            bool ret = false;
+            string path = String.Format("{0}\\Universidad.xml", Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+            ret = xml.Guardar(path, uni);
+            return ret;
+        }
+        #region Operadores
+        public static bool operator !=(Universidad g, Alumno a)
+        {
+            return !(g == a);
+        }
+        public static bool operator !=(Universidad g, Profesor i)
+        {
+            return !(g == i);
+        }
+        public static Profesor operator !=(Universidad g, EClases clase)
+        {
+            foreach (Profesor profesor in g.profesores)
             {
-                if(item == clase)
+                if (profesor != clase)
+                    return profesor;
+            }
+            throw new SinProfesorException();
+        }
+        public static bool operator ==(Universidad g, Alumno a)
+        {
+            foreach (Alumno alumno in g.alumnos)
+            {
+                if (alumno == a)
+                    return true;
+            }
+            return false;
+        }
+        public static bool operator ==(Universidad g, Profesor i)
+        {
+            foreach (Profesor profesor in g.profesores)
+            {
+                if (profesor == i)
+                    return true;
+            }
+            return false;
+        }
+        public static Profesor operator ==(Universidad g, EClases clase)
+        {
+            foreach (Profesor profesor in g.profesores)
+            {
+                if (profesor == clase)
+                    return profesor;
+            }
+            throw new SinProfesorException();
+        }
+        public static Universidad operator +(Universidad g, Alumno a)
+        {
+            if (g != a)
+            {
+                g.alumnos.Add(a);
+                return g;
+            }
+            throw new AlumnoRepetidoException();
+        }
+        public static Universidad operator +(Universidad g, Profesor i)
+        {
+            if (g != i)
+            {
+                g.profesores.Add(i);
+            }
+            return g;
+        }
+        public static Universidad operator +(Universidad g, EClases clase)
+        {
+            Jornada jornada = new Jornada(clase, g==clase);
+            g.jornadas.Add(jornada);
+            foreach (Alumno alumno in g.alumnos)
+            {
+                if (alumno == clase)
                 {
-                    return item;
+                    jornada.Alumnos.Add(alumno);
                 }
             }
-            //throw exception del profe
+            return g;
         }
-        public static Profesor operator !=(Universidad g, EClase clase)
-        {
-            foreach (Profesor item in g.profesores)
-            {
-                if (item != clase)
-                {
-                    return item;
-                }
-            }
-            return new Profesor();
-       //     throw exception sin profe
-        }
-        public static Universidad operator +(Universidad g , EClase clase)
-        {
-            foreach (Profesor item in g.Profesores)
-            {
-                
-            }
-            Jornada jornadaNueva = new Jornada();
-        }
-
+        #endregion
     }
 }
