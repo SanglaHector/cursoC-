@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,7 +74,7 @@ namespace ClasesInstanciables
             Texto texto = new Texto();
             return texto.Guardar(path, jornada.ToString());
         }
-        public string Leer()
+        public static string Leer()
         {
             string datos;
             Texto texto = new Texto();
