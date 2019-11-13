@@ -1,0 +1,1 @@
+INSERT INTO Patentes(patente , tipo) VALUES('Pedro','Vieja') ; 
