@@ -48,9 +48,8 @@ namespace Entidades
       }
       else
       {
-        //string s = string.Format("{0} no cumple el formato.", str);
-        //throw new PatenteInvalidaException(s);
-        throw null;
+        string s = string.Format("{0} no cumple el formato.", str);
+        throw new PatenteInvalidaException(s);
       }
     }
 

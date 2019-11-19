@@ -25,11 +25,18 @@ namespace Archivos
     {
       StreamReader reader = new StreamReader(archivo);
       Queue<Patente> patentes = new Queue<Patente>();
-      while(reader.EndOfStream)
+      while(!reader.EndOfStream)
       {
-        // aqui se valida si la patente es mercosur o vieja
-        Patente patente = new Patente(reader.ReadLine(), Patente.Tipo.Mercosur);
-        patentes.Enqueue(patente);
+                // aqui se valida si la patente es mercosur o vieja
+                try
+                {
+                    Patente patente = new Patente(reader.ReadLine(), Patente.Tipo.Mercosur);
+                    patentes.Enqueue(patente);
+                }
+                catch ( PatenteInvalidaException ex)
+                {
+
+                }
       }
       datos = patentes;
     }

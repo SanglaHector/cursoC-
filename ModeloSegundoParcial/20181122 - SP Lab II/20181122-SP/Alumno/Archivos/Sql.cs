@@ -57,10 +57,11 @@ namespace Archivos
 
     public Sql()
     {
-      string conectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog =patentes-sp-2018; Integrated Security = True";
+      string conectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=patentes-sp-2018;Integrated Security=True";
       this.conexion = new SqlConnection(conectionString);
       this.comando = new SqlCommand();
       comando.CommandType = System.Data.CommandType.Text;
+            this.comando.Connection = this.conexion;
     }
 
   }

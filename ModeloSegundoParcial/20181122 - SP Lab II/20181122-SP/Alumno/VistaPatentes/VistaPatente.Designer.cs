@@ -72,7 +72,7 @@
             this.Controls.Add(this.lblPatenteNro);
             this.Controls.Add(this.picPatente);
             this.Name = "VistaPatente";
-            this.Size = new System.Drawing.Size(128, 48);
+            this.Size = new System.Drawing.Size(125, 48);
             ((System.ComponentModel.ISupportInitialize)(this.picPatente)).EndInit();
             this.ResumeLayout(false);
 

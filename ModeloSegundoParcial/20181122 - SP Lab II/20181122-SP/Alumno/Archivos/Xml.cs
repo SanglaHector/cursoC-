@@ -22,8 +22,9 @@ namespace Archivos
     public void Leer(string archivo, out T datos)
     {
       XmlSerializer serial = new XmlSerializer(typeof(T));
-      XmlTextReader reader = new XmlTextReader(archivo);
+      TextReader reader = new StreamReader(archivo);
       datos = (T)serial.Deserialize(reader);
+            reader.Close();
     }
   }
-}
+}//mio
