@@ -1,0 +1,43 @@
+Clase alumno, contructor 
+public Alumno()
+{
+}
+
+public Alumno() : base 
+{
+}
+
+
+rotected override string MostrarDatos()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(base.MostrarDatos());
+            sb.AppendLine("Estado de cuenta : " + this.estadoCuenta);
+            sb.Append(this.ParticiparEnClase());
+            return sb.ToString();
+        }
+
+public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(this.MostrarDatos());
+            return sb.ToString();
+        }
+
+
+clase jornada 
+Metodo leer debe ser estatico 
+
+los MostrarDatos tienen todos formatos diferentes
+ramdom clases es diferente, recorre las clases con un for, yo nisiquiera las recorro
+Clase universidad
+no tiene metodo mostrar datos
+
+
+
+clase Persona, metodo validar DNI esta pensado de otra forma
+Metdo ToString trata a nacionalidad asi como viene, yo lo hago con un Nacionalidad.ToString();
+
+Las validaciones esta todas distintas
+
+Universitario
